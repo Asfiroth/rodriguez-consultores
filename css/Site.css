@@ -130,8 +130,11 @@
     .secondary.pointing.menu .toc.item {
         display: block;
     }
-    .masthead.segment {
+    /*.masthead.segment {
         min-height: 350px;
+    }*/
+    .nav .logo.item {
+        margin-right: 9.2em;    
     }
     .masthead h1.ui.header {
         font-size: 2em;
