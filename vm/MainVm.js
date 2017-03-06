@@ -1,5 +1,5 @@
 var MainViewModel = {
-    navigate: function(data, event){
+    navigate: function (data, event) {
         var self = this;
         var item = $(event.currentTarget);
         $('.item').removeClass('active');
@@ -7,9 +7,23 @@ var MainViewModel = {
 
         var url = item.attr('data-url');
         $('.content').load('./views/' + url + '.html');
-    },    
-    init: function(){
-        ko.applyBindings(MainViewModel, $('#main')[0]);
+    },
+    init: function () {
+        ko.applyBindings(MainViewModel, $('body')[0]);
+        $('.masthead')
+            .visibility({
+                once: false,
+                onBottomPassed: function () {
+                    $('.fixed.menu').transition('fade in');
+                },
+                onBottomPassedReverse: function () {
+                    $('.fixed.menu').transition('fade out');
+                }
+            });
+        // create sidebar and attach to menu open
+        $('.ui.sidebar')
+            .sidebar('attach events', '.toc.item');
+
     }
 }
 
