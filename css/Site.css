@@ -56,6 +56,31 @@
     font-size: 4em;
     font-weight: normal;
 }
+
+.about{
+    background-image: url('../images/about-us-slide.png') !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+}
+
+.about .ui.text.container h1.header{
+    font-size: 3.6em !important;
+    font-weight: bold !important;
+    text-align: center;
+    margin-top: 1.46em;
+}
+
+.ui.text.container.us h3,
+.ui.text.container.us p{
+    text-align: center;
+}
+
+.ui.text.container.us h3{
+    border-bottom: 2px solid rgba(34,36,38,.15);
+    border-top: 2px solid rgba(34,36,38,.15);
+}
+
+.ui.text.container h2,
 .service-item h2 {
     font-size: 1.9238541859054em;
     font-weight: normal;
