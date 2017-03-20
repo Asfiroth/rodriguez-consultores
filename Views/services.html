@@ -1,0 +1,33 @@
+<div class="ui vertical stripe segment services">
+    <div class="ui text container">
+        <h1 class="ui inverted header">
+            SERVICIOS
+        </h1>
+        <h2>Lorem ipsum dolor sit amet, consectetur adipiscing</h2>
+    </div>
+</div>
+<div class="serv-data">
+    <div class="ui vertical stripe segment circles">
+        <div class="circle-list" data-bind="foreach: CurrentServices">
+            <div class="circle-item-container" data-bind="click: $parent.ShowDetails, attr: {'data-type': Id}">
+                <div class="circle-item">
+                    <div class="content-icon">
+                        <span data-bind="css: Icon"></span>
+                    </div>
+                </div>
+                <div class="content-description" data-bind="text: Name"></div>
+                <button class="ui inverted button">Ver más</button>
+            </div>
+        </div>
+    </div>
+    <div class="ui vertical stripe segment circle-details">
+        <div class="ui text container all-details">
+            <ul class="service-details" data-bind="foreach: Details">
+                <li data-bind="text: $data"></li>
+            </ul>
+            <button class="ui inverted button" data-bind="click: toContact">Contáctanos</button>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="./vm/ServicesVm.js"></script>

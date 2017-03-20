@@ -9,45 +9,49 @@
 
     <!-- Site Properties -->
     <title>Rodriguez Consultores - Inicio</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./css/semantic.min.css">
     <link rel="stylesheet" href="./css/Site.css">
 </head>
 
 <body>
-    <!-- Following Menu -->
-    <div class="ui large top fixed hidden menu">
-        <div class="ui container">
-            <a class="active item" data-bind="click: navigate" data-url="home">Inicio</a>
-            <a class="item" data-bind="click: navigate" data-url="about">Nosotros</a>
-            <a class="item" data-bind="click: navigate" data-url="services">Servicios</a>
-            <a class="item" data-bind="click: navigate" data-url="contact">Contacto</a>
-        </div>
-    </div>
-
-    <!-- Sidebar Menu -->
-    <div class="ui vertical inverted sidebar menu">
-        <a class="active item" data-bind="click: navigate" data-url="home">Inicio</a>
-        <a class="item" data-bind="click: navigate" data-url="about">Nosotros</a>
-        <a class="item" data-bind="click: navigate" data-url="services">Servicios</a>
-        <a class="item" data-bind="click: navigate" data-url="contact">Contacto</a>
-    </div>
-
     <div class="pusher">
-        <div class="ui vertical masthead center aligned segment">
-            <div class="ui container nav">
-                <a href="/" class="logo item">
-                    <img src="images/logo.png" alt="Home">
-                </a>
+        <div class="navigation">
+            <!-- Following Menu -->
+            <div class="ui large top fixed hidden menu">
                 <div class="ui container">
-                    <div class="ui large secondary pointing menu">
-                        <a class="toc item">
-                            <i class="sidebar icon"></i>
-                        </a>
+                    <a class="active item" data-bind="click: navigate" data-url="home">Inicio</a>
+                    <a class="item" data-bind="click: navigate" data-url="about">Nosotros</a>
+                    <a class="item" data-bind="click: navigate" data-url="services">Servicios</a>
+                    <a class="item" data-bind="click: navigate" data-url="contact">Contacto</a>
+                </div>
+            </div>
 
-                        <a class="active item" data-bind="click: navigate" data-url="home">Inicio</a>
-                        <a class="item" data-bind="click: navigate" data-url="about">Nosotros</a>
-                        <a class="item" data-bind="click: navigate" data-url="services">Servicios</a>
-                        <a class="item" data-bind="click: navigate" data-url="contact">Contacto</a>
+            <!-- Sidebar Menu -->
+            <div class="ui vertical inverted sidebar menu">
+                <a class="active item" data-bind="click: navigate" data-url="home">Inicio</a>
+                <a class="item" data-bind="click: navigate" data-url="about">Nosotros</a>
+                <a class="item" data-bind="click: navigate" data-url="services">Servicios</a>
+                <a class="item" data-bind="click: navigate" data-url="contact">Contacto</a>
+            </div>
+
+
+            <div class="ui vertical masthead center aligned segment">
+                <div class="ui container nav">
+                    <a href="/" class="logo item">
+                        <img src="images/logo.png" alt="Home">
+                    </a>
+                    <div class="ui container">
+                        <div class="ui large secondary pointing menu">
+                            <a class="toc item">
+                                <i class="sidebar icon"></i>
+                            </a>
+
+                            <a class="active item" data-bind="click: navigate" data-url="home">Inicio</a>
+                            <a class="item" data-bind="click: navigate" data-url="about">Nosotros</a>
+                            <a class="item" data-bind="click: navigate" data-url="services">Servicios</a>
+                            <a class="item" data-bind="click: navigate" data-url="contact">Contacto</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -63,7 +67,7 @@
                         ex ea commodo consequat</h2>
                     <button class="ui inverted yellow button">Somos lo que ofrecemos</button>
                 </div>
-            </div>
+            </div>          
         </div>
         <div class="ui inverted vertical footer segment">
             <div class="ui container">
@@ -88,6 +92,8 @@
                     </div>
                     <div class="seven wide column">
                         <h4 class="ui inverted header">Siguenos en</h4>
+                        <span class="fa fa-facebook-official"></span>
+                        <span class="fa fa-twitter"></span>
                         <p>Rodríguez Consultores &amp; Asociados©2017</p>
                     </div>
                 </div>
@@ -97,7 +103,8 @@
     <script type="text/javascript" src="./js/jquery-3.1.1.min.js"></script>
     <script type="text/javascript" src="./js/knockout-3.4.1.js"></script>
     <script type="text/javascript" src="./js/semantic.min.js"></script>
-    <script type="text/javascript" src="./vm/MainVm.js"></script>
+    <script type="text/javascript" src="./vm/NavigationVm.js"></script>
+    <script type="text/javascript" src="./vm/FooterVm.js"></script>
 </body>
 
 </html>

@@ -1,3 +1,9 @@
+ul {
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+}
+
 .ui.secondary.pointing.menu{
     border-bottom: none;
 }
@@ -63,11 +69,100 @@
     background-size: cover !important;
 }
 
+.services .ui.text.container h1.header,
 .about .ui.text.container h1.header{
     font-size: 3.6em !important;
     font-weight: bold !important;
     text-align: center;
     margin-top: 1.46em;
+}
+
+
+.services{
+    background-image: url('../images/services-slide.png') !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+}
+
+.circle-details{
+    background-image: url('../images/services-data.png') !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    border-color: transparent !important;
+}
+
+.circles{
+    background: rgb(0, 157, 78) !important;
+    border-color: transparent !important;
+}
+
+.circle-list{
+    margin: -33px auto;
+    display: flex;
+    flex-direction: row;
+    width: 40%;
+    height: 40% !important;
+}
+
+.circle-item-container{
+    width: 200px;
+    height: 200px !important;
+    display: flex;
+    flex-direction: column;
+}
+
+.circle-item{
+	margin: 0;
+	border-radius: 100%;
+	border: 2px solid #FFF;
+	cursor: pointer;
+	color: #FFF;
+	padding: 3% 2% 1% 2%;
+    margin: 2px 32px;
+}
+
+div.content-description{
+    font-size: 100%;
+    color: white;
+    text-transform: capitalize;
+    text-align: center;
+    line-height: 2.3em;
+    font-weight: bold;
+}
+
+.circle-item > div.content-icon{
+  font-size: 1.375rem;
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: .2em 0;
+  height: 100px;
+  padding: 15px;
+}
+
+.circle-item-container button{
+    width: 60%;
+    margin: 0 auto !important;
+}
+
+div.content-icon span{
+    font-size: 69px;
+}
+.service-details{
+    margin: 20px auto;
+}
+
+.service-details li{
+    padding-left: 16px;
+    color: white;
+    font-size: 1.2em;
+    line-height: 1.3em;
+}
+
+.service-details li::before{
+    content: "-"; 
+    padding-right: 8px;
+    color: white; 
 }
 
 .ui.text.container.us h3,
