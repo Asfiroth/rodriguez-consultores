@@ -12,9 +12,10 @@ var ServicesVm = {
     ShowDetails: function(data, event){
         var self = ServicesVm;
         var details = [['Curso1', 'Curso2', 'Curso3'],['Asesoría Contable y Financiera', 'Asesoría en Gestión Pública'],['Item1', 'Item2', 'Item3'],['Item1','Item2']];
-        $('.all-details').fadeOut();
-        self.Details(details[data.Id]);
-        $('.all-details').fadeIn();
+        $('.all-details').fadeOut('slow', function() { 
+            self.Details(details[data.Id]); 
+            $('.all-details').fadeIn(); 
+        });
     },
     init: function(){
         ServicesVm.LoadData();
