@@ -144,12 +144,16 @@ div.content-description{
 
 .all-details > div > p{
     color: white;
-    position:relative;
-    top: calc(50% - 10px); 
+}
+
+.services > div > h2{
+    text-align: center;
 }
 
 div.content-icon i{
     font-size: 69px;
+    position:relative;
+    top: calc(50% - 10px); 
 }
 .service-details{
     margin: 20px auto;
