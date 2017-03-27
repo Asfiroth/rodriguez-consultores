@@ -28,7 +28,7 @@ var ServicesVm = {
             }
         ];
         $('.all-details').fadeOut('slow', function () {
-            self.Details(new Service(details[data.Id]));
+            self.CurrentService(new Service(details[data.Id]));
             $('.all-details').fadeIn();
         });
     },
