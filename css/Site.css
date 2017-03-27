@@ -135,6 +135,7 @@ div.content-description{
   margin: .2em 0;
   height: 100px;
   padding: 15px;
+  text-align: center;
 }
 
 .circle-item-container button{
@@ -153,7 +154,6 @@ div.content-description{
 div.content-icon i{
     font-size: 69px;
     position:relative;
-    top: calc(50% - 10px); 
 }
 .service-details{
     margin: 20px auto;
