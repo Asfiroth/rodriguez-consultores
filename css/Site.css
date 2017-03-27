@@ -144,9 +144,11 @@ div.content-description{
 
 .all-details > div > p{
     color: white;
+    position:relative;
+    top: calc(50% - 10px); 
 }
 
-div.content-icon span{
+div.content-icon i{
     font-size: 69px;
 }
 .service-details{
