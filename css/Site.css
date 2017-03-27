@@ -23,9 +23,6 @@ ul {
 
 .slide{
     background-image: url('../images/home-slide.png') !important;
-    background-repeat: no-repeat !important;
-    background-size: cover !important;
-    background-position: center center;
 }
 
 .s-title{
@@ -66,9 +63,6 @@ ul {
 
 .about{
     background-image: url('../images/about-us-slide.png') !important;
-    background-repeat: no-repeat !important;
-    background-size: cover !important;
-    background-position: center center;
 }
 
 .services .ui.text.container h1.header,
@@ -82,17 +76,16 @@ ul {
 
 .services{
     background-image: url('../images/services-slide.png') !important;
-    background-repeat: no-repeat !important;
-    background-size: cover !important;
-    background-position: center center;
 }
 
-.circle-details{
-    background-image: url('../images/services-data.png') !important;
+.img-back{
     background-repeat: no-repeat !important;
     background-size: cover !important;
     border-color: transparent !important;
-    background-position: center center;
+    background-position: center center !important;
+}
+.circle-details{
+    background-image: url('../images/services-data.png') !important;
 }
 
 .circles{
@@ -147,6 +140,10 @@ div.content-description{
 .circle-item-container button{
     width: 60%;
     margin: 0 auto !important;
+}
+
+.all-details > div > p{
+    color: white;
 }
 
 div.content-icon span{
