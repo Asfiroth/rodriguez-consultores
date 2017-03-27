@@ -21,16 +21,18 @@
         </div>
     </div>
     <div class="ui vertical stripe segment circle-details">
-        <div class="ui text container all-details" data-bind="with: CurrentService">
-            <div data-bind="foreach: Paragrahs">
+        <div class="ui text container all-details">
+            <!-- ko with: CurrentService -->
+            <div data-bind="foreach: Paragrpahs">
                 <p data-bind="text: $data"></p>
             </div>
             <ul class="service-details" data-bind="foreach: Details">
                 <li data-bind="text: $data"></li>
             </ul>
-        </div>
-            <button class="ui inverted button" data-bind="click: $root.toContact">Contáctanos</button>
-        </div>
+            <!-- /ko -->
+            <button class="ui inverted button" data-bind="click: toContact">Contáctanos</button>
+        </div>        
     </div>
+</div>
 
 <script type="text/javascript" src="./vm/ServicesVm.js"></script>

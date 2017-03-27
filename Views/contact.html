@@ -1,0 +1,31 @@
+<div class="contact-area">
+    <div class="ui vertical stripe segment contact">
+        <div class="ui container contact-info">
+            <div>
+                <h1 class="ui header inverted">Contacto</h1>
+                <h4 class="ui header inverted">Teléfono</h4>
+                <h4 class="ui header inverted">+51 998702896</h4>
+                <h4 class="ui header inverted">E-mail</h4>
+                <h4 class="ui header inverted">contacto@rodriguezconsultores.pe</h4>
+            </div>
+            <div>
+                <div class="ui form">
+                    <div class="field">
+                        <input type="text" name="first-name" placeholder="Nombre" data-bind="value: Name">
+                    </div>
+                    <div class="field">
+                        <input type="text" name="last-name" placeholder="Correo electrónico" data-bind="value: Mail">
+                    </div>
+                    <div class="field">
+                        <textarea rows="5" placeholder="Mensaje..." data-bind="value: Message"></textarea>
+                    </div>
+                    <button class="ui button inverted" type="submit" data-bind="click: Send">Enviar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ui vertical stripe segment" id="map" style="height: 500px !important;"></div>
+</div>
+<script src="http://maps.google.com/maps/api/js"></script>
+<script type="text/javascript" src="./js/gmaps.js"></script>
+<script type="text/javascript" src="./vm/ContactVm.js"></script>

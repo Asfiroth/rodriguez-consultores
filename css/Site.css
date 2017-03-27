@@ -25,6 +25,7 @@ ul {
     background-image: url('../images/home-slide.png') !important;
     background-repeat: no-repeat !important;
     background-size: cover !important;
+    background-position: center center;
 }
 
 .s-title{
@@ -67,6 +68,7 @@ ul {
     background-image: url('../images/about-us-slide.png') !important;
     background-repeat: no-repeat !important;
     background-size: cover !important;
+    background-position: center center;
 }
 
 .services .ui.text.container h1.header,
@@ -82,6 +84,7 @@ ul {
     background-image: url('../images/services-slide.png') !important;
     background-repeat: no-repeat !important;
     background-size: cover !important;
+    background-position: center center;
 }
 
 .circle-details{
@@ -89,6 +92,7 @@ ul {
     background-repeat: no-repeat !important;
     background-size: cover !important;
     border-color: transparent !important;
+    background-position: center center;
 }
 
 .circles{
@@ -212,6 +216,30 @@ div.content-icon span{
 }
 .secondary.pointing.menu .toc.item {
     display: none;
+}
+
+.contact{
+    background-image: url('../images/contact-background.png') !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    background-position: center center;
+}
+
+.contact-info{
+    display: flex !important;
+    flex-direction: row;
+}
+
+.contact-info > div{
+    width: 50%
+}
+.field > label{
+    color: white !important;
+}
+
+.contact-info > div > h4{
+    margin: 5px !important;
+    line-height: inherit !important;
 }
 
 @media only screen and (max-width: 700px) {
