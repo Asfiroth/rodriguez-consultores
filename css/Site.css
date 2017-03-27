@@ -86,6 +86,7 @@ ul {
 }
 .circle-details{
     background-image: url('../images/services-data.png') !important;
+    height: 620px;
 }
 
 .circles{
