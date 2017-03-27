@@ -38,7 +38,7 @@ var ServicesVm = {
     init: function () {
         ServicesVm.loadData();
         ko.applyBindings(ServicesVm, $('.serv-data')[0]);
-        $('div[data-type="1"]').click();
+        $('div[data-type="0"]').click();
     }
 };
 
