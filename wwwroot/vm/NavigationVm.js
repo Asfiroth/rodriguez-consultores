@@ -6,7 +6,7 @@ var Navigation = {
         item.addClass('active');
 
         var url = item.attr('data-url');
-        $('.content').load('./views/' + url + '.html');
+        window.location.href = 'home/' + url;
     },
     init: function () {
         ko.applyBindings(Navigation, $('.navigation')[0]);

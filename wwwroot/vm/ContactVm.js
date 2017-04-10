@@ -3,7 +3,17 @@ var Contact = {
     Mail: ko.observable(),
     Message: ko.observable(),
     Send: function (data, event) {
+        $.ajax({
+            url: '',
+            method: 'POST',
+            data: {},
+            success: function(){
 
+            },
+            error: function(){
+
+            }
+        })
     },
     InitializeMap: function () {
         var map = new GMaps({
