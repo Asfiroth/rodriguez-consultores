@@ -17,26 +17,25 @@
 </head>
 
 <body>
+
+        <!--Sidebar Menu 
+    <div class="ui vertical inverted sidebar menu">
+        <a class="active item" data-bind="click: navigate" data-url="home">Inicio</a>
+        <a class="item" data-bind="click: navigate" data-url="about">Nosotros</a>
+        <a class="item" data-bind="click: navigate" data-url="services">Servicios</a>
+        <a class="item" data-bind="click: navigate" data-url="contact">Contacto</a>
+    </div>-->
     <div class="pusher">
         <div class="navigation">
             <!-- Following Menu -->
             <div class="ui large top fixed hidden menu">
                 <div class="ui container">
-                    <a class="active item" data-bind="click: navigate" data-url="home">Inicio</a>
-                    <a class="item" data-bind="click: navigate" data-url="@Url.RouteUrl("About")">Nosotros</a>
-                    <a class="item" data-bind="click: navigate" data-url="services">Servicios</a>
-                    <a class="item" data-bind="click: navigate" data-url="contact">Contacto</a>
+                    <menulink controller-name="Home" action-name="Index" menu-text="Inicio"></menulink>
+                    <menulink controller-name="Home" action-name="About" menu-text="Nosotros"></menulink>
+                    <menulink controller-name="Home" action-name="Services" menu-text="Servicios"></menulink>
+                    <menulink controller-name="Home" action-name="Contact" menu-text="Contacto"></menulink>
                 </div>
             </div>
-
-             <!--Sidebar Menu 
-            <div class="ui vertical inverted sidebar menu">
-                <a class="active item" data-bind="click: navigate" data-url="home">Inicio</a>
-                <a class="item" data-bind="click: navigate" data-url="about">Nosotros</a>
-                <a class="item" data-bind="click: navigate" data-url="services">Servicios</a>
-                <a class="item" data-bind="click: navigate" data-url="contact">Contacto</a>
-            </div>-->
-
 
             <div class="ui vertical masthead center aligned segment">
                 <div class="ui container nav">
@@ -66,10 +65,10 @@
                     <div class="three wide column">
                         <h4 class="ui inverted header">Acerca de</h4>
                         <div class="ui inverted link list">
-                            <a href="#" class="item">Inicio</a>
-                            <a href="#" class="item">Nosotros</a>
-                            <a href="#" class="item">Servicios</a>
-                            <a href="#" class="item">Contacto</a>
+                            <menulink controller-name="Home" action-name="Index" menu-text="Inicio"></menulink>
+                            <menulink controller-name="Home" action-name="About" menu-text="Nosotros"></menulink>
+                            <menulink controller-name="Home" action-name="Services" menu-text="Servicios"></menulink>
+                            <menulink controller-name="Home" action-name="Contact" menu-text="Contacto"></menulink>
                         </div>
                     </div>
                     <div class="three wide column">
@@ -99,5 +98,4 @@
     </enviroment>
     @RenderSection("Scripts", required: false)
 </body>
-
 </html>
