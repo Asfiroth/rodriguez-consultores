@@ -1,4 +1,4 @@
-var MainViewModel = {
+var Navigation = {
     navigate: function (data, event) {
         var self = this;
         var item = $(event.currentTarget);
@@ -9,7 +9,7 @@ var MainViewModel = {
         $('.content').load('./views/' + url + '.html');
     },
     init: function () {
-        ko.applyBindings(MainViewModel, $('body')[0]);
+        ko.applyBindings(Navigation, $('.navigation')[0]);
         $('.masthead')
             .visibility({
                 once: false,
@@ -27,4 +27,4 @@ var MainViewModel = {
     }
 }
 
-MainViewModel.init();
+Navigation.init();
