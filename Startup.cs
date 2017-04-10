@@ -47,9 +47,7 @@ namespace rodriguez_consultores
 
             app.UseMvc(routes =>
             {
-                routes.MapRoute(
-                    name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                routes.MapRoute("site", "{action}/{id?}", defaults: new { Controller = "Home", Action = "Index" });
             });
         }
     }
