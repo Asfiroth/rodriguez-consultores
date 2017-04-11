@@ -103,10 +103,10 @@ h4 a{
 }
 
 .circle-list{
-    margin: -33px auto;
+    margin: 0 auto;
     display: flex;
     flex-direction: row;
-    width: 30%;
+    width: 504px;
     height: 40% !important;
 }
 
@@ -118,13 +118,13 @@ h4 a{
 }
 
 .circle-item{
-	margin: 0;
-	border-radius: 100%;
+	border-radius: 50%;
 	border: 2px solid #FFF;
 	cursor: pointer;
 	color: #FFF;
-	padding: 3% 2% 1% 2%;
-    margin: 2px 32px;
+    width: 130px;
+    height: 130px;
+    margin: auto 20px;
 }
 
 div.content-description{
@@ -137,14 +137,16 @@ div.content-description{
 }
 
 .circle-item > div.content-icon{
-  font-size: 1.375rem;
+  font-size: 69px;
   font-weight: 300;
+  line-height: 100%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  margin: .2em 0;
-  height: 100px;
-  padding: 15px;
+  height: 50%;
+  width: 100%;
+  margin: 20% auto;
   text-align: center;
+  vertical-align: bottom;
 }
 
 .circle-item-container button{
@@ -160,10 +162,6 @@ div.content-description{
     text-align: center;
 }
 
-div.content-icon i{
-    font-size: 69px;
-    position:relative;
-}
 .service-details{
     margin: 20px auto;
 }
