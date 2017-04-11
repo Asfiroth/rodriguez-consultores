@@ -61,7 +61,7 @@ namespace rodriguez_consultres.Helpers
             mimeMessage.Subject = "Contacto";
             mimeMessage.Body = new TextPart("plain")
             {
-                Text = ""
+                Text = $"Estimado(a) {name}, \n Hemos recibido su correo y procederemos a atenderlo, uno de nuestros representantes se pondrá en contacto con usted. \n Atentamente, \n Rodríguez Consultores & Asociados."
             };
             using (var client = new SmtpClient())
             {

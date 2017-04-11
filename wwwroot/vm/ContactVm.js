@@ -3,15 +3,19 @@ var Contact = {
     Mail: ko.observable(),
     Message: ko.observable(),
     Send: function (data, event) {
+        var element = $(event.currentTarget);
+        if(element.hasClass("loading")) return false;
+        element.addClass("loading");
         $.ajax({
             url: '/SendMail',
             method: 'POST',
             data: {senderName: Contact.Name(), senderMail: Contact.Mail(), message: Contact.Message()},
             success: function(){
+                element.removeClass("loading");
                 alert("Mensaje enviado satisfactoriamente");
             },
             error: function(){
-                alert("Error");
+                alert("Esta operación no puede ser procesada en este momento. Por favor intente más tarde. Si el problema persiste contacte con el Administrador del Sistema.");
             }
         })
     },
