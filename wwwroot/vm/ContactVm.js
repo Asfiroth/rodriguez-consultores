@@ -4,14 +4,14 @@ var Contact = {
     Message: ko.observable(),
     Send: function (data, event) {
         $.ajax({
-            url: '',
+            url: '/SendMail',
             method: 'POST',
-            data: {},
+            data: {senderName: Contact.Name(), senderMail: Contact.Mail(), message: Contact.Message()},
             success: function(){
-
+                alert("Mensaje enviado satisfactoriamente");
             },
             error: function(){
-
+                alert("Error");
             }
         })
     },

@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using rodriguez_consultores.Options;
 
 namespace rodriguez_consultores
 {
@@ -23,6 +24,10 @@ namespace rodriguez_consultores
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddOptions();
+
+            services.Configure<SmtpOptions>(Configuration.GetSection("Smtp"));
+
             // Add framework services.
             services.AddMvc();
         }

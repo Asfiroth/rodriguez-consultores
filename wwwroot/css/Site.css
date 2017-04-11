@@ -4,6 +4,10 @@ ul {
 	padding: 0px;
 }
 
+h4 a{
+    color: white;
+}
+
 .ui.secondary.pointing.menu{
     border-bottom: none;
 }
