@@ -15,13 +15,13 @@
             <div>
                 <div class="ui form">
                     <div class="field">
-                        <input type="text" name="first-name" placeholder="Nombre" data-bind="value: Name">
+                        <input type="text" name="first-name" required="required" placeholder="Nombre" data-bind="value: Name">
                     </div>
                     <div class="field">
-                        <input type="text" name="last-name" placeholder="Correo electrónico" data-bind="value: Mail">
+                        <input type="email" name="last-name" required="required" placeholder="Correo electrónico" data-bind="value: Mail">
                     </div>
                     <div class="field">
-                        <textarea rows="5" placeholder="Mensaje..." data-bind="value: Message"></textarea>
+                        <textarea rows="5" placeholder="Mensaje..." required="required" data-bind="value: Message"></textarea>
                     </div>
                     <button class="ui button inverted" type="submit" data-bind="click: Send">Enviar</button>
                 </div>
@@ -33,6 +33,7 @@
 
 @section Scripts{
     <environment names="Development">
+        <script type="text/javascript" src="~/js/knockout.validation.js"></script>
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCGiNvu-lRpYiVqMm7vcJrPuK7Mrw-kspg" type="text/javascript"></script>
         <script type="text/javascript" src="~/js/gmaps.js"></script>
         <script type="text/javascript" src="~/vm/ContactVm.js"></script>

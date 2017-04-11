@@ -37,8 +37,8 @@ namespace rodriguez_consultores.Controllers
         public async Task<IActionResult> SendMail(string senderName, string senderMail, string message)
         {
             var mailHelper = new MailHelper(_smtpOptions);
-            await mailHelper.SendMail(senderName, senderMail, message, MailType.ContactMail);
-            await mailHelper.SendMail(senderName, senderMail, message, MailType.ResponseMail);
+            await mailHelper.SendMail(senderName, senderMail, message, MailType.ContactMail).ConfigureAwait(continueOnCapturedContext: false);
+            await mailHelper.SendMail(senderName, senderMail, message, MailType.ResponseMail).ConfigureAwait(continueOnCapturedContext: false);
             return Json(true);
         }
 

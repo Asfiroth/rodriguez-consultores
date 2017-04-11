@@ -43,32 +43,32 @@ namespace rodriguez_consultres.Helpers
             {
                 Text = message
             };
-            using (var client = new SmtpClient())
-            {
-                await client.ConnectAsync(SmtpServer, SmtpPortNumber, false);
-                await client.AuthenticateAsync(_smtpOptions.Account, _smtpOptions.Pass);
-                await client.SendAsync(mimeMessage);
-                await client.DisconnectAsync(true);
-            }
+            await Send(mimeMessage).ConfigureAwait(continueOnCapturedContext: false);
         }
 
         private async Task SendAutomaticResponseMail(string name, string mail)
         {
             var mimeMessage = new MimeMessage();
-            mimeMessage.ReplyTo.Add(new MailboxAddress(_smtpOptions.ResponseName, _smtpOptions.Response));
             mimeMessage.From.Add(new MailboxAddress(_smtpOptions.ResponseName, _smtpOptions.Response));
             mimeMessage.To.Add(new MailboxAddress(name, mail));
+            mimeMessage.ReplyTo.Add(new MailboxAddress(_smtpOptions.ResponseName, _smtpOptions.Response));
             mimeMessage.Subject = "Contacto";
             mimeMessage.Body = new TextPart("plain")
             {
-                Text = $"Estimado(a) {name}, \n Hemos recibido su correo y procederemos a atenderlo, uno de nuestros representantes se pondrá en contacto con usted. \n Atentamente, \n Rodríguez Consultores & Asociados."
+                Text = $"Estimado(a) {name}, \nHemos recibido su correo y procederemos a atenderlo, en breves uno de nuestros representantes se pondrá en contacto con usted. \nAtentamente, \nRodríguez Consultores & Asociados."
             };
+            await Send(mimeMessage).ConfigureAwait(continueOnCapturedContext: false);
+        }
+
+        private async Task Send(MimeMessage message)
+        {
             using (var client = new SmtpClient())
             {
-                await client.ConnectAsync(SmtpServer, SmtpPortNumber, useSsl: false);
-                await client.AuthenticateAsync(_smtpOptions.Account, _smtpOptions.Pass);
-                await client.SendAsync(mimeMessage);
-                await client.DisconnectAsync(quit: true);
+                await client.ConnectAsync(SmtpServer, SmtpPortNumber, useSsl: false).ConfigureAwait(continueOnCapturedContext: false);
+                client.AuthenticationMechanisms.Remove("XOAUTH2");
+                await client.AuthenticateAsync(_smtpOptions.Account, _smtpOptions.Pass).ConfigureAwait(continueOnCapturedContext: false);
+                await client.SendAsync(message).ConfigureAwait(continueOnCapturedContext: false);
+                await client.DisconnectAsync(quit: true).ConfigureAwait(continueOnCapturedContext: false);
             }
         }
     }

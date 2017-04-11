@@ -17,14 +17,12 @@
 </head>
 
 <body>
-
-        <!--Sidebar Menu 
     <div class="ui vertical inverted sidebar menu">
-        <a class="active item" data-bind="click: navigate" data-url="home">Inicio</a>
-        <a class="item" data-bind="click: navigate" data-url="about">Nosotros</a>
-        <a class="item" data-bind="click: navigate" data-url="services">Servicios</a>
-        <a class="item" data-bind="click: navigate" data-url="contact">Contacto</a>
-    </div>-->
+        <menulink controller-name="Home" action-name="Index" menu-text="Inicio"></menulink>
+        <menulink controller-name="Home" action-name="About" menu-text="Nosotros"></menulink>
+        <menulink controller-name="Home" action-name="Services" menu-text="Servicios"></menulink>
+        <menulink controller-name="Home" action-name="Contact" menu-text="Contacto"></menulink>
+    </div>
     <div class="pusher">
         <div class="navigation">
             <!-- Following Menu -->
@@ -74,9 +72,9 @@
                     <div class="three wide column">
                         <h4 class="ui inverted header">Servicios</h4>
                         <div class="ui inverted link list">
-                            <a href="#" class="item">Capacitación</a>
-                            <a href="#" class="item">Asesoría y Consultorías</a>
-                            <a href="#" class="item">Trámites</a>
+                            <a href="/Services" class="item">Capacitación</a>
+                            <a href="/Services" class="item">Asesoría y Consultorías</a>
+                            <a href="/Services" class="item">Trámites</a>
                         </div>
                     </div>
                     <div class="seven wide column">
@@ -93,8 +91,7 @@
         <script type="text/javascript" src="~/js/jquery-3.1.1.min.js"></script>
         <script type="text/javascript" src="~/js/knockout-3.4.1.js"></script>
         <script type="text/javascript" src="~/js/semantic.min.js"></script>
-        <script type="text/javascript" src="~/vm/NavigationVm.js"></script>
-        <!--<script type="text/javascript" src="./vm/FooterVm.js"></script>-->
+        <script type="text/javascript" src="~/js/site.js"></script>
     </environment>
     @RenderSection("Scripts", required: false)
 </body>
