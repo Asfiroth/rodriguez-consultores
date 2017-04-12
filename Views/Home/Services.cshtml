@@ -1,0 +1,44 @@
+@{
+    ViewData["Title"] = "Servicios";
+}
+<div class="ui vertical stripe segment img-back services">
+    <div class="ui text container">
+        <h1 class="ui inverted header">
+            SERVICIOS
+        </h1>
+        <h2>Somos lo que ofrecemos</h2>
+    </div>
+</div>
+<div class="serv-data">
+    <div class="ui vertical stripe segment circles">
+        <div class="circle-list" data-bind="foreach: CurrentServices">
+            <div class="circle-item-container" data-bind="click: $parent.showDetails, attr: {'data-type': Id}">
+                <div class="circle-item">
+                    <div class="content-icon">
+                        <i data-bind="css: Icon"></i>
+                    </div>
+                </div>
+                <div class="content-description" data-bind="text: Name"></div>
+                <button class="ui inverted button">Ver más</button>
+            </div>
+        </div>
+    </div>
+    <div class="ui vertical stripe segment img-back circle-details">
+        <div class="ui container all-details">
+            <!-- ko with: CurrentService -->
+            <div data-bind="foreach: Paragraphs">
+                <p data-bind="text: $data"></p>
+            </div>
+            <ul class="service-details" data-bind="foreach: Details">
+                <li data-bind="text: $data"></li>
+            </ul>
+            <!-- /ko -->
+            <button class="ui inverted button" data-bind="click: toContact">Contáctanos</button>
+        </div>        
+    </div>
+</div>
+@section Scripts{
+    <environment names="Development">
+        <script type="text/javascript" src="~/vm/ServicesVm.js"></script>
+    </environment>
+}

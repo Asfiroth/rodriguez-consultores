@@ -1,0 +1,41 @@
+﻿@{
+    ViewData["Title"] = "Contacto";
+}
+
+<div class="contact-area">
+    <div class="ui vertical stripe segment img-back contact">
+        <div class="ui container contact-info">
+            <div>
+                <h1 class="ui header inverted">Contacto</h1>
+                <h4 class="ui header inverted">Teléfono</h4>
+                <h4 class="ui header inverted">+51 (01) 226-3580</h4>
+                <h4 class="ui header inverted">E-mail</h4>
+                <h4 class="ui header inverted"><a href="mailto:contacto@rodriguezconsultores.pe">contacto@rodriguezconsultores.pe</a></h4>
+            </div>
+            <div>
+                <div class="ui form">
+                    <div class="field">
+                        <input type="text" name="first-name" required="required" placeholder="Nombre" data-bind="value: Name">
+                    </div>
+                    <div class="field">
+                        <input type="email" name="last-name" required="required" placeholder="Correo electrónico" data-bind="value: Mail">
+                    </div>
+                    <div class="field">
+                        <textarea rows="5" placeholder="Mensaje..." required="required" data-bind="value: Message"></textarea>
+                    </div>
+                    <button class="ui button inverted" type="submit" data-bind="click: Send">Enviar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ui vertical stripe segment" id="map" style="height: 500px !important;"></div>
+</div>
+
+@section Scripts{
+    <environment names="Development">
+        <script type="text/javascript" src="~/js/knockout.validation.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCGiNvu-lRpYiVqMm7vcJrPuK7Mrw-kspg" type="text/javascript"></script>
+        <script type="text/javascript" src="~/js/gmaps.js"></script>
+        <script type="text/javascript" src="~/vm/ContactVm.js"></script>
+    </environment>
+}
