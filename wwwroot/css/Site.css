@@ -94,7 +94,7 @@ h4 a{
 }
 .circle-details{
     background-image: url('../images/services-data.png') !important;
-    height: 620px;
+    min-height: 620px;
 }
 
 .circles{
@@ -252,7 +252,13 @@ div.content-description{
     line-height: inherit !important;
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 1400px) {
+    .service-item {
+        width: 800px;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
     .ui.fixed.menu {
         display: none !important;
     }
@@ -263,11 +269,8 @@ div.content-description{
     .secondary.pointing.menu .toc.item {
         display: block;
     }
-    /*.masthead.segment {
-        min-height: 350px;
-    }*/
     .nav .logo.item {
-        margin-right: 9.2em;    
+        margin-right: 30.2em;
     }
     .masthead h1.ui.header {
         font-size: 2em;
@@ -276,5 +279,41 @@ div.content-description{
     .masthead h2 {
         margin-top: 0.5em;
         font-size: 1.5em;
+    }
+
+    .contact-info{
+        flex-direction: column;
+    }
+
+    .contact-info > div{
+        width: 100%;
+        padding: 10px;
+    }
+    .service-item {
+        margin-top: auto;
+        margin-bottom: auto;
+        width: auto;
+    }
+    .s-title {
+        font-size: 3.411453em !important;
+    }
+    .ui.text.container h2, .service-item h2 {
+        font-weight: normal;
+        color: white;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .circle-list{
+        width: 170px;
+        overflow: scroll;
+    }
+}
+
+@media only screen and (max-width: 420px) {
+    .nav .logo.item {
+        margin-right: 0em;
+        width: 65px;
+        overflow: hidden;
     }
 }
