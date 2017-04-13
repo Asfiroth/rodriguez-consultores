@@ -8,6 +8,10 @@ h4 a{
     color: white;
 }
 
+.burger{
+    display: none !important;
+}
+
 .validationMessage{
     color: white;
 }
@@ -263,6 +267,10 @@ div.content-description{
 }
 
 @media only screen and (max-width: 1000px) {
+    .burger{
+        display: block !important;
+    }
+    
     .ui.fixed.menu {
         display: none !important;
     }
