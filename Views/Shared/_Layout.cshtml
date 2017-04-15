@@ -14,6 +14,11 @@
         <link rel="stylesheet" href="~/css/semantic.min.css">
         <link rel="stylesheet" href="~/css/Site.css">
     </environment>
+    <environment names="Production">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css" />
+        <link rel="stylesheet" href="https://rodcons.azureedge.net/web-css/site.min.css">
+    </environment>
 </head>
 
 <body>
@@ -45,7 +50,12 @@
                         </div>
                     </div>
                     <a href="/" class="logo item">
+                    <environment names="Production">
+                        <img src="https://rodcons.azureedge.net/web-images/logo.png" alt="Home"/>
+                    </environment>
+                    <environment names="Development">
                         <img src="~/images/logo.png" alt="Home">
+                    </environment>
                     </a>
                     <div class="ui container">
                         <div class="ui large secondary pointing menu">
@@ -92,7 +102,10 @@
         </div>
     </div>
     <environment names="Production">
-        
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.js"></script>
+        <script type="text/javascript" src="https://rodcons.azureedge.net/web-js/site.min.js"></script>
     </environment>
     <environment names="Development">
         <script type="text/javascript" src="~/js/jquery-3.1.1.min.js"></script>
