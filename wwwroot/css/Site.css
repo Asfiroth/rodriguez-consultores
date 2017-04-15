@@ -8,12 +8,20 @@ h4 a{
     color: white;
 }
 
+.burger{
+    display: none !important;
+}
+
 .validationMessage{
     color: white;
 }
 
 .ui.secondary.pointing.menu{
     border-bottom: none;
+}
+
+.ui.vertical.segment{
+    border-bottom: none !important;
 }
 
 .ui.large.menu{
@@ -259,6 +267,10 @@ div.content-description{
 }
 
 @media only screen and (max-width: 1000px) {
+    .burger{
+        display: block !important;
+    }
+    
     .ui.fixed.menu {
         display: none !important;
     }
