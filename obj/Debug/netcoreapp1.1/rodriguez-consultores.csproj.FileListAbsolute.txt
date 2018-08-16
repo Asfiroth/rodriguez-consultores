@@ -1,8 +1,0 @@
-/Users/asfiroth/rodriguez-consultores/bin/Debug/netcoreapp1.1/rodriguez-consultores.deps.json
-/Users/asfiroth/rodriguez-consultores/bin/Debug/netcoreapp1.1/rodriguez-consultores.runtimeconfig.json
-/Users/asfiroth/rodriguez-consultores/bin/Debug/netcoreapp1.1/rodriguez-consultores.runtimeconfig.dev.json
-/Users/asfiroth/rodriguez-consultores/bin/Debug/netcoreapp1.1/rodriguez-consultores.dll
-/Users/asfiroth/rodriguez-consultores/bin/Debug/netcoreapp1.1/rodriguez-consultores.pdb
-/Users/asfiroth/rodriguez-consultores/obj/Debug/netcoreapp1.1/rodriguez-consultores.AssemblyInfo.cs
-/Users/asfiroth/rodriguez-consultores/obj/Debug/netcoreapp1.1/rodriguez-consultores.dll
-/Users/asfiroth/rodriguez-consultores/obj/Debug/netcoreapp1.1/rodriguez-consultores.pdb
