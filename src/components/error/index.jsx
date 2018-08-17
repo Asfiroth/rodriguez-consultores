@@ -1,5 +1,3 @@
-import React, { Component } from "react";
+import ErrorPage from "./ErrorPage";
 
-class Error extends Component {}
-
-export default Error;
+export { ErrorPage };

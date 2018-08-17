@@ -1,20 +1,22 @@
 import PropTypes from "prop-types";
 import React, { Component } from "react";
 import { Menu } from "semantic-ui-react";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import * as navigationActions from "../../actions/navigationActions";
 
 class Footer extends Component {
-  constructor(props) {
-    super(props);
-    const { handleItemClick } = props;
-    this.handleItemClick = handleItemClick.bind(this);
+  constructor() {
+    super();
+    this.onClickMenuItem = this.onClickMenuItem.bind(this);
   }
 
-  componentWillReceiveProps(props) {
-    this.setState({ activeItem: props.currenItem });
+  onClickMenuItem(e, { name }) {
+    this.props.actions.navigateTo(name);
   }
 
   render() {
-    // const { activeItem } = this.state;
+    const { activeItem } = this.props;
     return (
       <div className="ui inverted vertical footer segment">
         <div className="ui container">
@@ -22,36 +24,36 @@ class Footer extends Component {
             <div className="three wide column">
               <h4 className="ui inverted header">Acerca de</h4>
               <div className="ui inverted link list">
-                {/* <Menu pointing secondary text vertical>
+                <Menu pointing secondary text vertical>
                   <Menu.Item
                     name="home"
-                    active={this.state.activeItem === "home"}
-                    onClick={this.handleItemClick}
+                    active={activeItem === "home"}
+                    onClick={this.onClickMenuItem}
                   >
                     Inicio
                   </Menu.Item>
                   <Menu.Item
                     name="about"
-                    active={this.state.activeItem === "about"}
-                    onClick={this.handleItemClick}
+                    active={activeItem === "about"}
+                    onClick={this.onClickMenuItem}
                   >
                     Nosotros
                   </Menu.Item>
                   <Menu.Item
                     name="services"
-                    active={this.state.activeItem === "services"}
-                    onClick={this.handleItemClick}
+                    active={activeItem === "services"}
+                    onClick={this.onClickMenuItem}
                   >
                     Servicios
                   </Menu.Item>
                   <Menu.Item
                     name="contact"
-                    active={this.state.activeItem === "contact"}
-                    onClick={this.handleItemClick}
+                    active={activeItem === "contact"}
+                    onClick={this.onClickMenuItem}
                   >
                     Contacto
                   </Menu.Item>
-                </Menu> */}
+                </Menu>
               </div>
             </div>
             <div className="three wide column">
@@ -84,10 +86,18 @@ class Footer extends Component {
   }
 }
 
-Footer.propTypes = {
-  children: PropTypes.element,
-  currentItem: PropTypes.string,
-  handleItemClick: PropTypes.func
+const mapStateToProps = (state, ownProps) => {
+  console.log(state);
+  return { activeItem: state.navigation.page };
 };
 
-export default Footer;
+const mapDispatchToProps = (dispatch, ownProps) => {
+  return {
+    actions: bindActionCreators(navigationActions, dispatch)
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Footer);

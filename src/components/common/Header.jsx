@@ -3,47 +3,49 @@ import { Menu } from "semantic-ui-react";
 import PropTypes from "prop-types";
 import React, { Component } from "react";
 
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import * as navigationActions from "../../actions/navigationActions";
+
 class Header extends Component {
-  constructor(props) {
-    super(props);
-    const { handleItemClick, currentItem } = props;
-    this.handleItemClick = handleItemClick.bind(this);
-    this.state = { activeItem: currentItem };
+  constructor() {
+    super();
+    this.onClickMenuItem = this.onClickMenuItem.bind(this);
   }
 
-  componentWillReceiveProps(props) {
-    console.log(props);
+  onClickMenuItem(e, { name }) {
+    this.props.actions.navigateTo(name);
   }
 
   render() {
-    const { activeItem } = this.state;
+    let { activeItem } = this.props;
     return (
       <Menu pointing secondary>
         <Menu.Item
           name="home"
           active={activeItem === "home"}
-          onClick={this.handleItemClick}
+          onClick={this.onClickMenuItem}
         >
           Inicio
         </Menu.Item>
         <Menu.Item
           name="about"
           active={activeItem === "about"}
-          onClick={this.handleItemClick}
+          onClick={this.onClickMenuItem}
         >
           Nosotros
         </Menu.Item>
         <Menu.Item
           name="services"
           active={activeItem === "services"}
-          onClick={this.handleItemClick}
+          onClick={this.onClickMenuItem}
         >
           Servicios
         </Menu.Item>
         <Menu.Item
           name="contact"
           active={activeItem === "contact"}
-          onClick={this.handleItemClick}
+          onClick={this.onClickMenuItem}
         >
           Contacto
         </Menu.Item>
@@ -52,8 +54,17 @@ class Header extends Component {
   }
 }
 
-Header.propTypes = {
-  children: PropTypes.element
+const mapStateToProps = (state, ownProps) => {
+  return { activeItem: state.navigation.page };
 };
 
-export default Header;
+const mapDispatchToProps = (dispatch, ownProps) => {
+  return {
+    actions: bindActionCreators(navigationActions, dispatch)
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Header);

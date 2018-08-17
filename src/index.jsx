@@ -3,7 +3,11 @@
 import React from "react";
 import { render } from "react-dom";
 import { AppContainer } from "react-hot-loader";
-import Navigation from "./routes";
+import Router from "./routes";
+import configureStore from "./store/configureStore";
+import { Provider } from "react-redux";
+import { Header, Footer } from "./components";
+import "babel-polyfill";
 
 import jquery from "jquery";
 
@@ -14,9 +18,17 @@ import "semantic-ui-css/semantic.min.css";
 
 require("./favicon.ico");
 
+const store = configureStore();
+
 render(
   <AppContainer>
-    <Navigation />
+    <Provider store={store}>
+      <div>
+        <Header />
+        <Router />
+        <Footer />
+      </div>
+    </Provider>
   </AppContainer>,
   document.getElementById("app")
 );
