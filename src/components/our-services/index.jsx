@@ -1,3 +1,3 @@
-class OurServices {}
+import OurServices from "./OurServicesPage";
 
-export default OurServices;
+export { OurServices };

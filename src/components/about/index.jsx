@@ -1,3 +1,3 @@
-class About {}
+import About from "./AboutPage";
 
-export default About;
+export { About };
