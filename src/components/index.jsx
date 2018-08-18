@@ -4,3 +4,4 @@ export * from "./about";
 export * from "./our-services";
 export * from "./error";
 export * from "./common";
+export * from "./layout";

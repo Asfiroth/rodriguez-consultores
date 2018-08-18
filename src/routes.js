@@ -1,6 +1,16 @@
 import React, { Component } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import { Home, About, Contact, OurServices, ErrorPage } from "./components";
+
+import {
+  Home,
+  About,
+  Contact,
+  OurServices,
+  ErrorPage,
+  Layout
+} from "./components";
+
+import * as routes from "./constants/route-paths";
 
 class Router extends Component {
   constructor() {
@@ -9,13 +19,17 @@ class Router extends Component {
   render() {
     return (
       <BrowserRouter>
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route path="/nosotros" component={About} />
-          <Route path="/contacto" component={Contact} />
-          <Route path="/nuestros-servicios" component={OurServices} />
-          <Route component={ErrorPage} />
-        </Switch>
+        <Layout>
+          <div className="content">
+            <Switch>
+              <Route exact path={routes.home} component={Home} />
+              <Route path={routes.about} component={About} />
+              <Route path={routes.contact} component={Contact} />
+              <Route path={routes.ourServices} component={OurServices} />
+              <Route component={ErrorPage} />
+            </Switch>
+          </div>
+        </Layout>
       </BrowserRouter>
     );
   }
